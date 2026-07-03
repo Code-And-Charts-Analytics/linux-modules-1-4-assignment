@@ -1,0 +1,13 @@
+==================================================
+FILE SYSTEM AND LINK ANALYSIS REPORT
+==================================================
+1. Inode Analysis:
+Command: ls -li original.txt hard_link.txt soft_link.txt
+Observation: Revealed that the original file and the hard link share the exact same Inode number, while the symbolic (soft) link points to a completely unique inode.
+
+2. Impact of Deleting the Original File:
+Command: rm original.txt && cat hard_link.txt && cat soft_link.txt
+Observation: 'cat hard_link.txt' still successfully reads the data because the data blocks persist as long as one link exists. However, 'cat soft_link.txt' fails with an error because its target path was destroyed.
+
+3. Conclusions:
+Hard links point directly to the physical data blocks (inode), making them resilient to original file deletion. Soft links merely store a text path to the original filename, acting like a shortcut.

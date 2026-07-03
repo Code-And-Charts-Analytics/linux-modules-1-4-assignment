@@ -1,0 +1,22 @@
+==================================================
+LINUX ENVIRONMENT VERIFICATION REPORT
+==================================================
+1. Username and Groups:
+Command: whoami && groups
+Observation: This command displays the current active user account and all security groups the user belongs to, verifying account privileges.
+
+2. Current Shell:
+Command: echo $SHELL
+Observation: Displays the absolute path of the current command-line interpreter environment (typically /bin/bash), confirming the shell environment.
+
+3. Current Working Directory:
+Command: pwd
+Observation: Prints the absolute path of the current directory, verifying exactly where the user is located in the filesystem hierarchy.
+
+4. Workspace Files and Directories:
+Command: ls -la
+Observation: Lists all files and directories in the current workspace, including hidden files (starting with a dot), along with permissions and ownership.
+
+5. Network Connectivity:
+Command: ping -c 3 google.com
+Observation: Sends 3 ICMP echo requests to a public server to verify operational network connectivity and DNS resolution.

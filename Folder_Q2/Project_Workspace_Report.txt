@@ -1,0 +1,17 @@
+==================================================
+SECURE PROJECT WORKSPACE REPORT
+==================================================
+1. Umask Value:
+Command: umask
+Observation: Displays the default permissions mask for newly created files and folders, determining default security restrictions.
+
+2. Initial Permissions & Ownership:
+Command: touch secure_note.txt && ls -l secure_note.txt
+Observation: Creates a sample project file and displays its default permissions, showing ownership by the current user.
+
+3. Permissions Post-Modification:
+Command: chmod 700 secure_note.txt && ls -l secure_note.txt
+Observation: Restricts file access entirely so that ONLY the file owner can read, write, or execute it. Group and others are completely locked out.
+
+4. Data Protection Summary:
+By altering the permissions to '700' (drwx------), sensitive project data is isolated from unauthorized local users or malicious system processes sharing the environment.

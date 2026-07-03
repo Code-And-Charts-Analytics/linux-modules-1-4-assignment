@@ -1,0 +1,19 @@
+==================================================
+STORAGE HEALTH ASSESSMENT AND DOCUMENTATION
+==================================================
+1. Available Storage & Mounted Filesystems:
+Command: df -h & lsblk
+Observation: Displays all physically attached disk blocks, their partitions, mount locations, and human-readable storage metrics.
+
+2. Inode Utilization:
+Command: df -i
+Observation: Monitors total vs. consumed filesystem inodes, ensuring the operating system doesn't run out of file index pointers even if physical space is free.
+
+3. Storage Health Observations:
+The root partition filesystem is functioning within normal parameters with adequate storage cushion. No critical space warnings or inode exhaustion anomalies were observed.
+
+4. Recommendations:
+- Implement logrotate configurations to stop application log growth from overwhelming disk space.
+- Set up a cron utility to routinely clear transient files from /tmp directories.
+- Configure alerting thresholds at 85% storage capacity utilization to handle proactive storage expansion.
+

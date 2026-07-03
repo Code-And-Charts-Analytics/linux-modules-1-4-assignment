@@ -1,0 +1,18 @@
+==================================================
+FILE ACCESS AND I/O INVESTIGATION REPORT
+==================================================
+1. Open Files & File Descriptors:
+Command: lsof -u $(whoami) | head -n 10
+Observation: Lists the active files currently opened by the user's running processes, showing how Linux maps files to system processes.
+
+2. Resource Limits:
+Command: ulimit -n
+Observation: Displays the maximum number of open file descriptors allowed per individual process, which is critical for configuring scaling applications.
+
+3. Standard Output (STDOUT) Redirection:
+Command: echo "Standard Output Test" > stdout.log
+Observation: Uses the '>' operator to redirect standard stream 1 (STDOUT) away from the monitor and directly into a text file.
+
+4. Standard Error (STDERR) Redirection:
+Command: ls non_existent_file.txt 2> stderr.log
+Observation: Uses '2>' to intercept stream 2 (STDERR), catching the command's error message and writing it safely into an error log instead of breaking terminal execution.
